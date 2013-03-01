@@ -1,0 +1,10 @@
+<h2>Email list</h2>
+<h1><a href="/">Home</a></h1>
+
+<% if !@contacts.nil?%>
+  <% @contacts.each do |c|%>
+    <ul>
+      <li><%= c[:name]%>s : 	<%= c[:email]%></li>
+    </ul>
+  <%end%>
+<%end%>

@@ -1,0 +1,6 @@
+javac.classpath=
+platform.active=Ruby_0
+rails.port=3000
+rails.servertype=WEBRICK
+required.gems=actionmailer, actionpack, activemodel, activerecord, activerecord-jdbc-adapter, activerecord-jdbcmysql-adapter, activerecord-jdbcpostgresql-adapter, activeresource, activesupport, arel, builder, columnize, i18n, jdbc-mysql, jdbc-postgres, paperclip, rack, rails, rake, rcov, ruby-debug-base, ruby-debug-ide, sources, tzinfo, will_paginate
+source.encoding=UTF-8

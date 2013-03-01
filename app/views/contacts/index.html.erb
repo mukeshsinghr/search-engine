@@ -1,0 +1,13 @@
+<h2>Extract contacts</h2>
+
+<a href="/contacts/gmail"><img src="/assets/gmail_logo.jpg" alt="Gmail logo" /></a>
+<a href="/contacts/yahoo"><img src="/assets/yahoo_logo2.gif" alt="Gmail logo" /></a>
+<a href="/contacts/hotmail"><img src="/assets/hotmail_logo.gif" alt="Gmail logo" /></a>
+
+<% if !@contacts.nil?%>
+  <% @contacts.each do |c|%>
+    <ul>
+      <li><%= c[:name]%> : 	<%= c[:email]%></li>
+    </ul>
+  <%end%>
+<%end%>
