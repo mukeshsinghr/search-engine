@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   #  OpenSSL::SSL::VERIFY_NONE
-  
+  include AppLib::ApiLib
   def gmail_contact
     puts "params:#{params}"
     if Rails.env.development?
@@ -52,5 +52,11 @@ class ContactsController < ApplicationController
     send_file filename, :filename => "x.pdf", :type => "application/pdf"
   end
 
+  def send_email
 
+    api_respond_to(@response, @errors)
+
+  rescue Exception => e
+    api_exception_handler(exception)
+  end
 end

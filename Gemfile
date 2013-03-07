@@ -22,9 +22,10 @@ end
 
 gem 'jquery-rails'
 gem 'omnicontacts'
-gem 'contacts'
-gem 'gdata'
-gem 'hpricot'
+gem 'warbler'
+#gem 'contacts'
+#gem 'gdata'
+#gem 'hpricot'
 gem 'prawn'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

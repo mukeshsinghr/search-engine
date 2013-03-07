@@ -1,0 +1,4 @@
+module Tvider
+  module TviderApiResponse    
+  end
+end

@@ -23,11 +23,11 @@ root :to => 'contacts#index'
 
      resources :contacts do
        member do
-         get 'gmail'
-         get 'yahoo'
+         get 'send_email'
          get 'contacts_callback'
          get 'index'
          get 'report'
+        
          post 'toggle'
        end
      end
@@ -75,5 +75,6 @@ root :to => 'contacts#index'
   # match ':controller(/:action(/:id))(.:format)'
 
   match "contacts/:email_server/contact_callback" => "contacts#contacts_callback"
+  match "contacts/send_email.format" => "contacts#send_email", :as => :get
 #  invites/gmail/contact_callback
 end
