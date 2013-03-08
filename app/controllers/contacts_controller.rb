@@ -1,12 +1,12 @@
 class ContactsController < ApplicationController
   #  OpenSSL::SSL::VERIFY_NONE
   include AppLib::ApiLib
+  
   def gmail_contact
     puts "params:#{params}"
     if Rails.env.development?
       OpenSSL::SSL::VERIFY_NONE
     end
-    #    end
     @contacts = request.env['omnicontacts.contacts']
     puts "List of contacts obtained from #{params[:importer]}:"
     @contacts.each do |contact|
@@ -52,11 +52,27 @@ class ContactsController < ApplicationController
     send_file filename, :filename => "x.pdf", :type => "application/pdf"
   end
 
-  def send_email
-
-    api_respond_to(@response, @errors)
+  def test
+    puts "sending email"
+     subject   =  "This is freindly email subject"
+        body = "This is email body"
+        AppMailer.send_email("mukesh_s_r@yahoo.co.in", "mukeshsinghr@gmail.com", subject, body).deliver!
+     api_respond_to(@response, @errors)
 
   rescue Exception => e
     api_exception_handler(exception)
+  end
+
+  def send_email
+       puts "host_url:#{host_url}"
+       to_email_list = params[:emails].split(',')
+          subject   =  "This is freindly email subject"
+        body = "This is email body"
+        AppMailer.send_email(to_email_list, "mukeshsinghr@gmail.com", subject, body).deliver!
+        @response[:result] = "mail sent"
+    api_respond_to(@response, @errors)
+
+  rescue Exception => e
+    api_exception_handler(e)
   end
 end

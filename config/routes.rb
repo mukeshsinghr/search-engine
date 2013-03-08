@@ -22,21 +22,22 @@ root :to => 'contacts#index'
   #
 
      resources :contacts do
-       member do
+       collection do
          get 'send_email'
          get 'contacts_callback'
          get 'index'
          get 'report'
-        
+         get 'test'
          post 'toggle'
        end
      end
 
    resources :search do
-       member do
+       collection do
          get 'report'
        end
    end
+
   
   #     collection do
   #       get 'sold'

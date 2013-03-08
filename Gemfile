@@ -41,3 +41,8 @@ gem 'prawn'
 
 # To use debugger
 # gem 'debugger'
+#group :development do
+#  gem 'ruby-debug19', :require => 'ruby-debug'
+#  gem 'linecache19'#, :git => 'http://github.com/mark-moseley/linecache'
+#  gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
+#end

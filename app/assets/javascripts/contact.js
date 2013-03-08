@@ -9,6 +9,13 @@ $(function(){
    sendEmail(selectedEmails);
    e.stopImmediatePropagation();
   });
+
+  $("#cbAll").click(function(e) {
+     console.log("clicked..."+this.checked)
+   $(".cbEmails").attr("checked", this.checked);
+//   e.stopImmediatePropagation();
+});
+
 });
 function sendEmail(emailString) {
 
@@ -17,9 +24,10 @@ function sendEmail(emailString) {
 
             xhr.setRequestHeader("Accept", "text/javascript");
 //            xhr.setRequestHeader("Authorization", $.cookie('tviderAuthorization'));
-            data : { emails : emailString }
+            
 
-        }
+        },
+        data : {'emails' : emailString}
     });
 
     //Make Ajax call to fetch public timline
@@ -27,9 +35,7 @@ function sendEmail(emailString) {
             // Check weather status code.
             // if code is 0 then its success
             if (data.code == "0") {
-                //Pass result to showTweetTimeline method to populate
-                showUserTweetTimeline(data.result);
-            // showTweetTimeline(data.result);
+               alert("email sent")
             }
         });
         

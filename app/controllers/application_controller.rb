@@ -34,4 +34,7 @@ class ApplicationController < ActionController::Base
     return resp_error
   end
 
+  def host_url
+     request.protocol + request.host_with_port
+  end
 end

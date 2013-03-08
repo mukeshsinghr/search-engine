@@ -8,8 +8,9 @@
 
 <% if !@contacts.nil?%>
 <ul>
+  <li><span><input type="checkbox" id="cbAll" name="cbAll" />Select All</span> <!--<span><input type="checkbox" id="cbNone" name="cbNone" />All</span>--></li>
   <% @contacts.each do |contact|%>
-  <li><input type="checkbox" id="" name="cbEmails" value="<%=contact[:email]%>"/> <%= contact[:name]%> : 	<%= contact[:email]%></li>
+  <li><input type="checkbox" id="" name="cbEmails" class="cbEmails" value="<%=contact[:email]%>"/> <%= contact[:name]%> : 	<%= contact[:email]%></li>
   <%end%>
 </ul>
 <input type="button" id="buttonSendEmail" value="Submit"></input>
