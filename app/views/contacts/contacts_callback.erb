@@ -2,16 +2,17 @@
 <script type="text/javascript">
 
 </script>
+<div id="EmailList">
+  <h2>Email list</h2>
+  <h1><a href="/">Home</a></h1>
 
-<h2>Email list</h2>
-<h1><a href="/">Home</a></h1>
-
-<% if !@contacts.nil?%>
-<ul>
-  <li><span><input type="checkbox" id="cbAll" name="cbAll" />Select All</span> <!--<span><input type="checkbox" id="cbNone" name="cbNone" />All</span>--></li>
-  <% @contacts.each do |contact|%>
-  <li><input type="checkbox" id="" name="cbEmails" class="cbEmails" value="<%=contact[:email]%>"/> <%= contact[:name]%> : 	<%= contact[:email]%></li>
+  <% if !@contacts.nil?%>
+    <ul>
+      <li><span><input type="checkbox" id="cbAll" name="cbAll" />Select All</span> <!--<span><input type="checkbox" id="cbNone" name="cbNone" />All</span>--></li>
+      <% @contacts.each do |contact|%>
+        <li><input type="checkbox" id="" name="cbEmails" class="cbEmails" value="<%=contact[:email]%>"/> <%= contact[:name]%> : 	<%= contact[:email]%></li>
+      <%end%>
+    </ul>
+    <input type="button" id="buttonSendEmail" value="Submit"></input>
   <%end%>
-</ul>
-<input type="button" id="buttonSendEmail" value="Submit"></input>
-<%end%>
+</div>

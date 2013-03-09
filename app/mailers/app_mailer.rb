@@ -6,7 +6,7 @@ class AppMailer < ActionMailer::Base
   # This method send an email to Multiple user at a time.
   def send_email(to_email_list, from_user_email, subject, body)
     mail(:to => to_email_list, :from => from_user_email, :subject => subject, :body=> body)
-    puts "mail has been sent to #{to_email_list}"
+#    puts "mail has been sent to #{to_email_list}"
   end
 end
 

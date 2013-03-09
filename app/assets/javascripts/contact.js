@@ -12,8 +12,18 @@ $(function(){
 
   $("#cbAll").click(function(e) {
      console.log("clicked..."+this.checked)
-   $(".cbEmails").attr("checked", this.checked);
-//   e.stopImmediatePropagation();
+      $('input:checkbox[name=cbEmails]').attr('checked', true);
+     if(!this.checked) {
+//            $(".cbEmails").attr("checked", true);
+//            $("input:checkobx['cbEmails']").attr("checked", true);
+//            $("input:checkobx['name']").attr('checked',true)
+//              $('input:checkbox[name=cbEmails]').attr('checked', this.checked);
+//     } else {
+//          $(".cbEmails").attr("checked", false);
+console.log("removed")
+           $("#cbEmails").removeAttr("checked");
+     }
+   e.stopImmediatePropagation();
 });
 
 });

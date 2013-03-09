@@ -60,6 +60,17 @@ module SearchEngine
     config.assets.version = '1.0'
 
 #    config.load_paths << "#{RAILS_ROOT}/vendor/prawn/lib"
-    
+
+    config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :user_name => 'testparadigm@gmail.com',
+    :password => 'creatives',
+    :authentication => 'plain',
+    :enable_starttls_auto => true
+  }
   end
 end
