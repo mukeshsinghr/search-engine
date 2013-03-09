@@ -68,7 +68,7 @@ module SearchEngine
     :address => "smtp.gmail.com",
     :port => 587,
     :user_name => 'testparadigm@gmail.com',
-    :password => 'creatives',
+    :password => 'pwd',
     :authentication => 'plain',
     :enable_starttls_auto => true
   }

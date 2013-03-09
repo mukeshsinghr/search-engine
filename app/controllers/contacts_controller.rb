@@ -56,7 +56,7 @@ class ContactsController < ApplicationController
     puts "sending email"
      subject   =  "This is freindly email subject"
         body = "This is email body"
-        AppMailer.send_email("mukesh_s_r@yahoo.co.in", "mukeshsinghr@gmail.com", subject, body).deliver!
+        AppMailer.send_email("mukesh_s_r@yahoo.co.in", "raghava.sangars@gmail.com", subject, body).deliver!
      api_respond_to(@response, @errors)
 
   rescue Exception => e
@@ -68,6 +68,7 @@ class ContactsController < ApplicationController
        to_email_list = params[:emails].split(',')
           subject   =  "This is freindly email subject"
         body = "This is email body"
+        puts "Email sending to : #{to_email_list}"
         AppMailer.send_email(to_email_list, "mukeshsinghr@gmail.com", subject, body).deliver!
         @response[:result] = "mail sent"
     api_respond_to(@response, @errors)
